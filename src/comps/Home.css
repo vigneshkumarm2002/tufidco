@@ -684,6 +684,7 @@
         font-size: 28px;
     }
     .navContainer {
+        height: 60px;
         padding: 10px 20px;
     }
     .navList1 li {
