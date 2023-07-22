@@ -44,6 +44,7 @@ useEffect(()=>{
       <div className='authContainer'>
         <div className="formContainer">
           <div className='formHead'>
+            <p>Msg: Login using google account</p>
             <h3>Sign In</h3>
             <h5>Sign in to your account</h5>
           </div>
