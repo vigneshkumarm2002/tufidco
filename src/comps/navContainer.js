@@ -8,7 +8,7 @@ import menuIcon from "./../assets/menu.svg";
 
 const NavContainer = () => {
 
-  const [navsVisible, setNavsVisible] = useState(window.innerWidth >= 750);
+  const [navsVisible, setNavsVisible] = useState(window.innerWidth >= 768);
 
   const toggleNavs = () => {
     setNavsVisible(!navsVisible);
