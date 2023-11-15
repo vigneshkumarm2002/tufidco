@@ -1,5 +1,7 @@
 // Sidebar.js
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./Home.css";
 
 const Sidebar = () => {
@@ -7,6 +9,7 @@ const Sidebar = () => {
     {
       name: "Dashboard",
       icon: "speed",
+      link:"/"
     },
     {
       name: "Implementing agency details",
@@ -58,41 +61,61 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       {data.map((item, index) => (
+       
         <div
           key={index}
           className={`nav-item ${selectedNavItem === index ? "active-bx" : ""}`}
         >
           {selectedNavItem === index && <div className="active-box">. </div>}
         
+
           <div
             className="nav-item-header"
             onClick={() => handleNavItemClick(index)}
           >
+              {!data.subNavs && <Link to={item.link} key={index}>
             <div className="alignMenu">
-              <span className={`material-symbols-rounded ${selectedNavItem === index ? "active" : ""}`}>
+              <span
+                className={`material-symbols-rounded ${
+                  selectedNavItem === index ? "active" : ""
+                }`}
+              >
                 {item.icon}
               </span>
-              <span className={`nav-text ${selectedNavItem === index ? "active" : ""}`}>
+              <span
+                className={`nav-text ${
+                  selectedNavItem === index ? "active" : ""
+                }`}
+              >
                 {item.name}
               </span>
             </div>
+             </Link >}
             {item.subNavs && (
-              <span className={`material-symbols-rounded toggle-button ${selectedNavItem === index ? "active" : ""}`}>
+              <span
+                className={`material-symbols-rounded toggle-button ${
+                  selectedNavItem === index ? "active" : ""
+                }`}
+              >
                 {selectedNavItem === index ? "expand_less" : "expand_more"}
               </span>
             )}
+
           </div>
+         
+          
           {selectedNavItem === index && item.subNavs && (
             <div className="subnav-container">
               {item.subNavs.map((subNavItem, subIndex) => (
-                <div key={subIndex} className="subnav-item">
-                  {subNavItem}
-                </div>
+                <Link to="/navs" key={subIndex}>
+                  <div className="subnav-item">{subNavItem}</div>
+                </Link>
               ))}
             </div>
           )}
         </div>
       ))}
+      
     </div>
   );
 };

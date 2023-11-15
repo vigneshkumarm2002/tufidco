@@ -1,13 +1,19 @@
-
-import Sign from "./comps/signin";
-
+import React from 'react';
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
+import Signin from "./comps/signin";
+import Home from "./comps/Home";
+import Vendor from "./comps/VendorMaster";
 import './App.css';
 
 function App() {
   return (
-    <>
-    <Sign/>
-    </>
+    <Router>
+    <Routes>
+      <Route path="/login" element={<Signin />} />
+      <Route path="/navs" element={<Vendor />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
+  </Router>
   );
 }
 

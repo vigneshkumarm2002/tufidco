@@ -12,6 +12,11 @@
   
 
 }
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .header{
     width:100%;
     height:80px;
@@ -579,6 +584,54 @@ padding: 20px;
     line-height: normal;
 }
 
+
+/* Example CSS styles */
+.buttonStyle {
+    /* Common styles for all action buttons */
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    appearance: none;
+  }
+  
+  .viewBtn {
+    /* Styles for the 'View' button */
+    background-color: green;
+    color: white;
+  }
+  
+  .editBtn {
+    /* Styles for the 'Edit' button */
+    background-color: blue;
+    color: white;
+  }
+  
+  .deleteBtn {
+    /* Styles for the 'Delete' button */
+    background-color: red;
+    color: white;
+  }
+  
+  .activeBtn{
+    background-color: green;
+    color: white;
+  }
+
+  .pendingBtn{
+    background-color: green;
+    color: white;
+  }
+
+  .approvedBtn{
+    background-color: green;
+    color: white;
+  }
+  /* Add more styles for other actions as needed */
+
+  
+
 @media only screen and (max-width: 1150px) {
     .chartContainer {
         height: 300px;
@@ -609,6 +662,7 @@ padding: 20px;
     .navList1 li {
         color: transparent;
     }
+    
 
     .navContainer:hover {
         width: 200px;
