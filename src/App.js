@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/tufidco">
     <Routes>
       <Route path="/login" element={<Signin />} />
       <Route path="/navs" element={<Vendor />} />
