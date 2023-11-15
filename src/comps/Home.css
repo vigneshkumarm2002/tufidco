@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
 
 .homeContainer {
+    
     width: 100%;
     height: 100%;
     position: relative;
@@ -8,6 +9,7 @@
     flex-direction: row;
     background-color: #F5F5F5;
     box-sizing: border-box;
+  
 
 }
 .header{
@@ -26,10 +28,41 @@
 
 }
 
+
 .userProfile{
+    position: relative;
     display:flex;
     gap:10px;
     align-items:center;
+}
+.user_dropdown{
+    background-color: white;
+    position: absolute;
+    top: 50px;
+    padding: 10px;
+    right: 0;
+    z-index: 999;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.user_dropdown li{
+    list-style-type: none;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_dropdown li:hover{
+    background-color:#F3F4F6;
+
 }
 .userProfile p{
     color:white;
@@ -49,17 +82,22 @@
 
 .userPicture img {
     width:100%;
-    heightL:100%;
+    height:100%;
     border-radius: 50%;
 }
 .sidebar {
     width:280px;
+    height: calc(100vh - 80px);;
     background-color: white;
     color: black;
- padding:30px 0px;
+ padding:10px 0px;
     display: flex;
     flex-direction: column;
-    gap: 0px;
+    gap: 5px;
+    position: sticky;
+    top: 0;
+    left: 0;
+   
 }
 
 
@@ -118,7 +156,7 @@ padding-right:20px;
   .subnav-container {
     margin-top:2px;
     margin-bottom: 15px;
-    margin-left:50px;
+    margin-left:55px;
     display:flex;
     flex-direction:column;
     gap:8px;
@@ -199,13 +237,14 @@ padding-right:20px;
 }
 
 .dashboardContainer {
-    padding-left: 60px;
-    padding-right: 20px;
+padding: 20px;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    overflow: auto;
+   
 
 }
 
@@ -260,24 +299,25 @@ padding-right:20px;
 
 .cardContainer {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min and max width as needed */
+    gap: 16px; /* Optional: You can adjust the gap between columns */
+    grid-auto-flow: dense; 
 }
 
+
 .card {
-    width: 25%;
+    width:100%;
     height: 120px;
     background-color: aqua;
     border-radius: 15px;
     position: relative;
 }
 
-.card img {
+.card span {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
 }
 
 .cardContent {
@@ -289,19 +329,20 @@ padding-right:20px;
 .cardContent h4 {
     color: #000;
     font-family: Open Sans;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
+    margin-top: 5px;
 }
 
 .cardContent p {
     color: #000;
     font-family: Lato;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .chartContainer {
-    height: 340px;
+    height: 353px;
     width: 100%;
     padding: 30px 30px;
     background-color: #fff;
@@ -355,11 +396,50 @@ padding-right:20px;
     font-size: 14px;
     font-weight: 400;
 }
+.chartHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position:relative;
+}
 
-.lineChart {
+.barChart {
     width: 100%;
     height: 100%;
-    padding: 10px 0px 30px 0px;
+    padding: 10px 0px 20px 0px;
+}
+
+
+.download_dropdown{
+    background-color: #F3F4F6;
+    position: absolute;
+  
+    padding: 10px;
+    top: 30px;
+    right: 0px;
+    z-index: 999;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.download_dropdown li{
+    list-style-type: none;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download_dropdown li:hover{
+    background-color:white;
+
 }
 
 .subContainer {

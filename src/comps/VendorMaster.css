@@ -1,0 +1,184 @@
+
+.bodyContainer {
+    padding-left: 60px;
+    padding-right: 20px;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.addButton button{
+    width: 200px;
+    outline: none;
+    border: none;
+    background-color: #1B8381;
+    height: 40px;
+    border-radius: 8px;
+ 
+    color: #FFF;
+text-align: center;
+font-family: Montserrat;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+}
+.searchContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchContainer p{
+    font-size: smaller;
+}
+
+.searchBox{
+    margin-left: 10px;
+    height: 30px;
+}
+.bodyHead {
+
+    background-color: #000;    
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    align-items: start;
+    flex-direction: column;
+
+}
+
+.headTop {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.headBody p{
+    color: #fff;
+}
+
+.headTop h3 {
+    color: #fff;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.dashItems {
+  
+    gap: 5px;
+    align-items: center;
+}
+
+.dashItems p {
+    color: #fff;
+}
+
+.dashItems img {
+    fill: #fff;
+}
+
+.searchBar {
+    position: relative;
+}
+
+.tableContainer table{
+    width:100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 30px;
+    border-collapse: collapse;
+    border-spacing:0;
+    border-width:0;
+    background-color: white;
+    
+    
+}
+
+.tableContainer{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 100%;
+    padding: 20PX;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.tableTop{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+.dataTable th,td{
+    font-family: "Poppins",sans-serif;
+    min-width: 200px;
+    padding: 10px;
+    font-size: smaller;
+    text-align: center;
+    border: 0.1px solid;
+    
+    color: #666;
+}
+.dataTable tbody td{
+    font-size: smaller;
+    color: #000;
+}
+
+.rowAfter{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.greenBtn{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    color: #fff;
+    width: fit-content;
+    min-width: 70px;
+    background-color: #9BDD7C;
+    margin-bottom: 5px;
+}
+
+.orangeBtn{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    color: #fff;
+    width: 70px;
+    background-color:orange;
+    margin-bottom: 5px;
+}
+.blackBtn{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    color: #fff;
+    min-width: fit-content;
+    background-color: rgb(239, 67, 67);
+    margin-bottom: 5px;
+}
+
+.vendorName{
+    text-align: start;
+}

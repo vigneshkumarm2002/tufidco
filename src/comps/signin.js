@@ -5,6 +5,7 @@ import googleIcon from './../assets/google-icon.svg';
 import appleIcon from './../assets/apple-icon.svg';
 import {auth,provider} from "./config"
 import { signInWithPopup } from 'firebase/auth';
+import VendorMaster from './VendorMaster';
 
 
 
@@ -22,7 +23,7 @@ const SignIn = () => {
 
   return (
     <>
-    {value?<Home/>:
+    {value? <Home setvalue={setvalue}/>:
     <div className='container'>
       <div className='blackContainer'>
         <h1>TAMILNADU URBAN FINANCE AND INFRASTRUCTURE DEVELOPMENT CORPORATION LIMITED</h1>

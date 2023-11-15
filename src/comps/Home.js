@@ -1,112 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import NavBar from "./navContainer.js";
-import searchIcon from "./../assets/search.svg";
-import notificationIcon from "./../assets/notification.svg";
-import revenueIcon from "./../assets/revenueIcon.svg";
-import transactionsIcon from "./../assets/totalTransIcon.svg";
-import totaluserIcon from "./../assets/totalUser.svg";
-import likesIcon from "./../assets/likesIcon.svg";
-import userPicture from "./../assets/image.png";
-import ChartComponent from "./Chart.js";
-import PieChart from "./piechart";
 
-const Home = () => {
-  
+import ChartComponent from "./Chart.js";
+import Header from "./header.js";
+
+const Home = ({ setvalue }) => {
+  const cardData = [
+    {
+      name: "Corporations",
+      value: 200,
+      icon: "business",
+      backgroundColor: "#DDEFE0",
+    },
+    {
+      name: "Municipalities",
+      value: 400,
+      icon: "location_city",
+      backgroundColor: "#F4ECDD",
+    },
+    {
+      name: "Town Panchayats",
+      value: 600,
+      icon: "location_on",
+      backgroundColor: "#EFDADA",
+    },
+    {
+      name: "Total Funds",
+      value: "Rs 12345.99 lacs",
+      icon: "attach_money",
+      backgroundColor: "#DEE0EF",
+    },
+    {
+      name: "Total Projects",
+      value: 62,
+      icon: "work",
+      backgroundColor: "#D0EEF6",
+    },
+    {
+      name: "Total Loans",
+      value: 40,
+      icon: "payments",
+      backgroundColor: "#ECD4F7",
+    },
+  ];
+
+
+
   return (
     <>
-      <div className="header">
-        <h1>NODAL AGENCY</h1>
-        <div className="userProfile">
-          <div className="userPicture">
-            <img src={userPicture} alt="user" />
-      
-          </div>
-          <p>Payment Maker</p>
-        </div>
-      </div>
+ <Header setvalue={setvalue} />
+
       <div className="homeContainer">
         <NavBar />
         <div className="dashboardContainer">
-          <div className="dashHead">
-            <h3>Dashboard</h3>
-            <div className="dashItems">
-              <div className="searchBar">
-                <input type="text" placeholder="Search..." />
-                <img
-                  style={{ cursor: "pointer" }}
-                  src={searchIcon}
-                  alt="searchIcon"
-                />
-              </div>
-              <img
-                style={{ cursor: "pointer" }}
-                src={notificationIcon}
-                alt="searchIcon"
-              />
-            </div>
-          </div>
-
           <div className="cardContainer">
-            <div className="card" style={{ backgroundColor: "#DDEFE0" }}>
-              <img src={revenueIcon} alt="revenueIcon" />
-              <div className="cardContent">
-                <p>Total Revenues</p>
-                <h4>$2,129,430</h4>
+            {cardData.map((card, index) => (
+              <div
+                className="card"
+                style={{ backgroundColor: card.backgroundColor }}
+              >
+                <span className="material-symbols-rounded">{card.icon}</span>
+                <div className="cardContent">
+                  <p>{card.name}</p>
+                  <h4>{card.value}</h4>
+                </div>
               </div>
-            </div>
-            <div className="card" style={{ backgroundColor: "#F4ECDD" }}>
-              <img src={transactionsIcon} alt="revenueIcon" />
-              <div className="cardContent">
-                <p>Total Transactions</p>
-                <h4>1,520</h4>
-              </div>
-            </div>
-            <div className="card" style={{ backgroundColor: "#EFDADA" }}>
-              <img src={likesIcon} alt="revenueIcon" />
-              <div className="cardContent">
-                <p>Total Likes</p>
-                <h4>9,721</h4>
-              </div>
-            </div>
-            <div className="card" style={{ backgroundColor: "#DEE0EF" }}>
-              <img src={totaluserIcon} alt="revenueIcon" />
-              <div className="cardContent">
-                <p>Total Users</p>
-                <h4>892</h4>
-              </div>
-            </div>
+            ))}
           </div>
           <ChartComponent />
-          <div className="subContainer">
-            <PieChart />
-
-            <div className="scheduleContainer">
-              <div className="productTop">
-                <h3>Top products</h3>
-                <p className="see">see all</p>
-              </div>
-              <div className="allMeeting">
-                <div
-                  style={{ borderLeft: "5px solid #9BDD7C" }}
-                  className="meeting"
-                >
-                  <h6>Meeting with suppliers from Kuta Bali</h6>
-                  <p>14.00-15.00</p>
-                  <p>at Sunset Road, Kuta, Bali </p>
-                </div>
-
-                <div
-                  style={{ borderLeft: "5px solid #6972C3" }}
-                  className="meeting"
-                >
-                  <h6>Check operation at Giga Factory 1</h6>
-                  <p>18.00-20.00</p>
-                  <p>at Central Jakarta </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </>
