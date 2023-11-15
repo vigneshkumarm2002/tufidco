@@ -594,39 +594,42 @@ padding: 20px;
     border: none;
     outline: none;
     appearance: none;
+    color: white;
+    font-family: Montserrat;
+    font-weight: 500;
   }
   
   .viewBtn {
     /* Styles for the 'View' button */
-    background-color: green;
-    color: white;
+    background-color: #70c4f9;
+    
   }
   
   .editBtn {
     /* Styles for the 'Edit' button */
-    background-color: blue;
-    color: white;
+    background-color: #fec254;
+  
   }
   
   .deleteBtn {
     /* Styles for the 'Delete' button */
-    background-color: red;
-    color: white;
+    background-color:#ff585b;
+    
   }
   
   .activeBtn{
-    background-color: green;
-    color: white;
+    background-color: #4CDEC1;
+  
   }
 
   .pendingBtn{
-    background-color: green;
-    color: white;
+    background-color:  rgb(248, 209, 79);
+  
   }
 
   .approvedBtn{
-    background-color: green;
-    color: white;
+    background-color: #4CDEC1;
+  
   }
   /* Add more styles for other actions as needed */
 
