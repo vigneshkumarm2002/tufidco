@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
 import "./Home.css";
+import { useNavigate } from 'react-router-dom';
 
 import userPicture from "./../assets/image.png";
 const Header = ({setvalue}) => {
+  const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
 
     const handleDropdownToggle = () => {
@@ -10,7 +12,7 @@ const Header = ({setvalue}) => {
     };
   
     const handleLogout = () => {
-      setvalue(false);
+      navigate('/login');
     };
   return (
     <div className="header">

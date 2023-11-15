@@ -25,7 +25,6 @@ const SignIn = () => {
 
   return (
     <>
-      {value ? <Home setValue={setValue} /> :
         <div className='container'>
           <div className='blackContainer'>
             <h1>TAMILNADU URBAN FINANCE AND INFRASTRUCTURE DEVELOPMENT CORPORATION LIMITED</h1>
@@ -61,7 +60,7 @@ const SignIn = () => {
             </div>
           </div>
         </div>
-      }
+      
     </>
   );
 };

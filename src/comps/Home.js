@@ -5,7 +5,7 @@ import NavBar from "./navContainer.js";
 import ChartComponent from "./Chart.js";
 import Header from "./header.js";
 
-const Home = ({ setvalue }) => {
+const Home = () => {
   const cardData = [
     {
       name: "Corporations",
@@ -49,7 +49,7 @@ const Home = ({ setvalue }) => {
 
   return (
     <>
- <Header setvalue={setvalue} />
+ <Header  />
 
       <div className="homeContainer">
         <NavBar />

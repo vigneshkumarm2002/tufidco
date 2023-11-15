@@ -5,7 +5,7 @@ import NavBar from "./navContainer.js";
 import ChartComponent from "./Chart.js";
 import Header from "./header.js";
 
-const Navigation = ({ setvalue }) => {
+const Navigation = () => {
 
  const data=[
     {
@@ -41,7 +41,7 @@ const Navigation = ({ setvalue }) => {
 
   return (
     <>
- <Header setvalue={setvalue} />
+ <Header />
 
       <div className="homeContainer">
         <NavBar />

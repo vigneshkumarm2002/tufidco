@@ -5,7 +5,7 @@ import NavBar from "./navContainer.js";
 import Home from "./../assets/dashboardIcon.svg";
 import Header from "./header.js";
 
-const VendorMaster = ({ setvalue ,tableName,aboutTable , addButton}) => {
+const VendorMaster = ({tableName,aboutTable , addButton}) => {
   const data = [
     {
       vendordetails: [
@@ -58,7 +58,7 @@ const VendorMaster = ({ setvalue ,tableName,aboutTable , addButton}) => {
 
   return (
     <>
-      <Header setvalue={setvalue} />
+      <Header />
       <div className="homeContainer">
         <NavBar />
         <div className="bodyContainer">
