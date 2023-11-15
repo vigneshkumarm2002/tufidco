@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/tufidco/static/css/main.65906b88.css",
-    "main.js": "/tufidco/static/js/main.d1407697.js",
+    "main.css": "/tufidco/static/css/main.9a61aafd.css",
+    "main.js": "/tufidco/static/js/main.5d27b79a.js",
     "static/js/787.625357ab.chunk.js": "/tufidco/static/js/787.625357ab.chunk.js",
     "static/media/dashboardIcon.svg": "/tufidco/static/media/dashboardIcon.856b7547dc7f9b912057ff679dbd3c1e.svg",
     "static/media/google-icon.svg": "/tufidco/static/media/google-icon.aa3f48282ed4d82b3dd747083e488af9.svg",
     "static/media/apple-icon.svg": "/tufidco/static/media/apple-icon.a792e594fe18353bdd70e37a3510d470.svg",
     "index.html": "/tufidco/index.html",
-    "main.65906b88.css.map": "/tufidco/static/css/main.65906b88.css.map",
-    "main.d1407697.js.map": "/tufidco/static/js/main.d1407697.js.map",
+    "main.9a61aafd.css.map": "/tufidco/static/css/main.9a61aafd.css.map",
+    "main.5d27b79a.js.map": "/tufidco/static/js/main.5d27b79a.js.map",
     "787.625357ab.chunk.js.map": "/tufidco/static/js/787.625357ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.65906b88.css",
-    "static/js/main.d1407697.js"
+    "static/css/main.9a61aafd.css",
+    "static/js/main.5d27b79a.js"
   ]
 }
