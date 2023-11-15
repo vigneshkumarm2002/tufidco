@@ -164,12 +164,17 @@ padding-right:20px;
     margin-left:55px;
     display:flex;
     flex-direction:column;
-    gap:8px;
+    gap:4px;
   }
   
   .subnav-item {
      color:gray;
      cursor: pointer;
+    
+     padding: 3px;
+  }
+  .active-subnav{
+    color: black;
   }
   
   .subnav-item:hover {

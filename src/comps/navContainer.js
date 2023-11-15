@@ -54,8 +54,17 @@ const Sidebar = () => {
   ];
   const [selectedNavItem, setSelectedNavItem] = useState(0); // Set to 0 initially
 
+  const [selectedSubNavItem, setSelectedSubNavItem] = useState(null); // Add state for selected subnav item
+
+
+  const handleSubNavItemClick = (subIndex,event) => {
+    event.stopPropagation(); 
+    setSelectedSubNavItem(subIndex);
+  };
+
   const handleNavItemClick = (index) => {
     setSelectedNavItem(selectedNavItem === index ? null : index);
+    setSelectedSubNavItem(null);
   };
 
   return (
@@ -108,7 +117,14 @@ const Sidebar = () => {
             <div className="subnav-container">
               {item.subNavs.map((subNavItem, subIndex) => (
                 <Link to="/navs" key={subIndex}>
-                  <div className="subnav-item">{subNavItem}</div>
+                  <div
+                    className={`subnav-item ${
+                      selectedSubNavItem === subIndex ? "active-subnav" : ""
+                    }`}
+                    onClick={(event) => handleSubNavItemClick(subIndex, event)}
+                  >
+                    <p>{subNavItem}</p>
+                  </div>
                 </Link>
               ))}
             </div>
