@@ -9,8 +9,19 @@
     flex-direction: row;
     background-color: #F5F5F5;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
   
 
+}
+
+.logoImg{
+  width: auto;
+  height: 35px;
+}
+
+.logoImg img{
+  width: auto;
+  height: 100%;
 }
 
 a{
@@ -23,8 +34,9 @@ a{
     background-color:#1B8381;
     display:flex;
     justify-content:space-between;
-    padding:0px 30px;
+    padding:0px 20px;
     align-items:center;
+    user-select: none;
 }
 .header h1{
     font-size:20px;
@@ -32,7 +44,9 @@ a{
    
 
 }
-
+.togglemenu{
+    display: none;
+}
 
 .userProfile{
     position: relative;
@@ -91,35 +105,41 @@ a{
     border-radius: 50%;
 }
 .sidebar {
-    width:280px;
-    height: calc(100vh - 80px);;
+    width:260px;
+   max-height: calc(100vh - 80px);
+   height: auto;
     background-color: white;
     color: black;
  padding:10px 0px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+ gap: 4px;
     position: sticky;
     top: 0;
     left: 0;
-   
+   overflow-y: auto;
 }
 
 
-.material-symbols-rounded {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+.sidebar::-webkit-scrollbar{
+ display: none;
 }
 
 
+
+
+.material-symbols-rounded  {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
   
   .nav-item {
     position: relative;
     width:100%;
-padding-right:20px;
+padding-right:10px;
 
   }
 
@@ -130,22 +150,30 @@ padding-right:20px;
     gap:10px;
     align-items:center;
     margin-left:20px;
-    padding:10px 0px;
+    padding:8px 0px;
   }
   
   .nav-item-header {
+    position: relative;
     cursor: pointer;
     display: flex;
-    gap:5px;
+    gap:0px;
     align-items: center;
-    justify-content:space-between;    
+    justify-content:space-between;   
   }
   
   
   .nav-item-header:hover{
+   
+    color:#1B8381;
+  }
+  .nav-border{
+    position: absolute;
     border-left:4px solid #1B8381;
- color:#1B8381;
-    
+    border-radius: 50px;
+   
+    height: 100%;
+  
   }
 
   .nav-icon {
@@ -156,25 +184,35 @@ padding-right:20px;
   
   .nav-text {
     font-size: 16px;
+    font-weight: 500;
   }
   
   .subnav-container {
     margin-top:2px;
-    margin-bottom: 15px;
-    margin-left:55px;
+    margin-bottom: 12px;
+   
     display:flex;
     flex-direction:column;
-    gap:4px;
+    height:auto;
+    width: 100%;
   }
   
   .subnav-item {
      color:gray;
      cursor: pointer;
-    
-     padding: 3px;
+     padding: 4px 3px;
+     padding-left: 55px;
+     padding-right: 20px;
+
   }
+  
   .active-subnav{
     color: black;
+    background-color: rgb(229 231 235);
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+    padding-left: 35px;
   }
   
   .subnav-item:hover {
@@ -184,6 +222,7 @@ padding-right:20px;
   .active {
     height:100%;
     color: #1B8381;
+  
    
   }
   .active-box{
@@ -191,6 +230,7 @@ padding-right:20px;
     top:0;
     left:0;
  border-left:4px solid #1B8381;
+ border-radius: 50px;
  height:100%;
   }
 
@@ -248,8 +288,9 @@ padding-right:20px;
 
 .dashboardContainer {
 padding: 20px;
-    width: 100%;
-    height: 100%;
+    width: calc(100vw - 260px);
+    height: calc(100vh - 80px);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -258,51 +299,6 @@ padding: 20px;
 
 }
 
-.dashHead {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.dashHead h3 {
-    color: #000;
-    font-family: Montserrat;
-    font-size: 24px;
-
-    font-weight: 700;
-
-}
-
-.dashItems {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.searchBar {
-    position: relative;
-}
-
-.searchBar input {
-    width: 180px;
-    height: 30px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    color: #B0B0B0;
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: 400;
-    padding-left: 10px;
-}
-
-.searchBar img {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-}
 
 
 
@@ -452,142 +448,7 @@ padding: 20px;
 
 }
 
-.subContainer {
 
-    height: 250px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 30px;
-
-}
-
-.productChart {
-    width: 50%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 30px 40px 30px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.scheduleContainer {
-    width: 50%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 30px 40px 30px 40px;
-}
-
-.see {
-    color: #858585;
-    font-family: Montserrat;
-    font-size: 12px;
-
-    font-weight: 400;
-
-}
-
-.pieChart {
-    width: 134px;
-    height: 134px;
-}
-
-.productTop {
-    display: flex;
-    justify-content: space-between;
-}
-
-.productTop h3 {
-    font-family: Montserrat;
-    font-size: 18px;
-
-    font-weight: 700;
-}
-
-.productTop select {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    color: #858585;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 400;
-    cursor: pointer;
-}
-
-.productData {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: space-around;
-    height: 100%;
-}
-
-.productIndicator {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.alignProduct {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-
-}
-
-.alignProduct h6 {
-    color: #000;
-    font-family: Montserrat;
-    font-size: 14px;
-
-    font-weight: 700;
-}
-
-.data-content p {
-    color: #858585;
-    font-family: Lato;
-    font-size: 12px;
-    font-weight: 400;
-    margin-top: 5px;
-}
-
-.allMeeting {
-    padding: 25px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-
-}
-
-.meeting {
-    border-left: 5px solid #9BDD7C;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding-left: 15px;
-}
-
-.meeting h6 {
-    color: #666;
-    font-family: Lato;
-    font-size: 14px;
-    ;
-    font-weight: 700;
-}
-
-.meeting p {
-    color: #999;
-    font-family: Lato;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
 
 
 /* Example CSS styles */
@@ -602,6 +463,8 @@ padding: 20px;
     color: white;
     font-family: Montserrat;
     font-weight: 500;
+    background-color: #4CDEC1;
+    cursor: pointer;
   }
   
   .viewBtn {
@@ -638,430 +501,33 @@ padding: 20px;
   }
   /* Add more styles for other actions as needed */
 
-  
-
-@media only screen and (max-width: 1150px) {
-    .chartContainer {
-        height: 300px;
-        padding: 30px 30px;
-    }
-}
-
-@media only screen and (max-width: 1150px) and (min-width: 769px) {
-    .navContainer {
-        position: absolute;
-        top: 20px;
-        width: 80px;
-        height: 650px;
-        padding: 10px 30px 30px 30px;
-        z-index: 999;
-        margin-top: 20px;
-    }
-
-    .dashboardContainer {
-        margin-left: 80px;
-        margin-top: 20px;
-    }
-
-    .navContainer h1 span {
-        color: transparent;
-    }
-
-    .navList1 li {
-        color: transparent;
-    }
-    
-
-    .navContainer:hover {
-        width: 200px;
-    }
-
-    .navContainer:hover .navList1 li,
-    .navContainer:hover h1 span {
-        color: white;
-    }
-    @media (hover: none), (pointer: coarse) {
-        .navContainer {
-            position: absolute;
-            top: 20px;
-            width: 80px;
-            height: 650px;
-            padding: 10px 30px 30px 30px;
-            z-index: 999;
-        }
-    
-        .dashboardContainer {
-            margin-left: 80px;
-        }
-    
-        .navContainer h1 span {
-            color: transparent;
-        }
-    
-        .navList1 li {
-            color: transparent;
-        }
-    }
-
-}
-
-
-@media only screen and (max-width: 1000px) {
-    .homeContainer {
-        padding: 20px;
-    }
-
-    .dashboardContainer {
-        padding-left: 30px;
-        padding-right: 20px;
-        gap: 20px;
-        z-index: 995;
-        background-color: #F5F5F5;
-    }
-
-    .cardContainer {
-        gap: 20px;
-    }
-
-    .subContainer {
-        gap: 20px;
-
-        height: 230px;
-    }
-
-    .productChart {
-        padding: 20px 20px 20px 20px;
-    }
-
-    .scheduleContainer {
-
-
-
-        padding: 20px 20px 20px 20px;
-    }
-
-    .alignProduct h6 {
-        font-size: 12px;
-
-        font-weight: 600;
-    }
-
-    .productIndicator {
-        gap: 10px;
-    }
-
-    .alignProduct {
-        gap: 5px;
-
-    }
-
-    .card img {
-        top: 15px;
-        right: 15px;
-    }
-
-    .cardContent {
-        bottom: 15px;
-        left: 15px;
-    }
-
-    .chartContainer {
-        padding: 20px 20px;
-    }
-
-    .productTop select {
-        width: 100px;
-    }
-
-    .cardContent h4 {
-        font-size: 20px;
-        font-weight: 700;
-    }
-
-
-}
-
-@media only screen and (max-width: 768px) {
-    .homeContainer {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        padding:0px;
-        gap: 0px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .dashboardContainer {
-        padding-left: 0px;
-        padding-right: 0px;
-        padding: 30px;
-    }
-
-
-.dashHead h3 {
-    font-size: 22px;
-
-}
-
-.dashItems {
-    gap: 20px;
-}
-
-
-.searchBar input {
-    width: 150px;
-}
-
-.searchBar img {
+  @media only screen and (max-width: 1024px) {
+   .sidebar{
     position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-}
-
-
-    .navContainer {
-        width: 100%;
-        height: 80px;
-        background-color: black;
-        border-radius: 0px;
-        color: #fff;
-        padding: 10px 30px;
-        flex-direction: column;
-        z-index: 999;
-    }
-    .navs {
-        top:55px;
-        left: -100%;
-        width: 230px;
-        height: 75vh;
-        padding: 30px;
-        position: absolute;
-        background-color: #000;
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s linear 0.5s, opacity 0.5s, left 0.5s;
-        z-index: 999;
-      }
-      
-      .navsVisible {
-        visibility: visible;
-        opacity: 1;
-        transition-delay: 0s;
-        left: 0;
-      }
-      
-    .logo{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: auto;
-    }
-    .logo img{
-        display: block;
-       position: absolute;
-       left: 30px;
-       cursor: pointer;
-    }
-    .logo h1{
-        margin: auto;
-    }
-    .cardContent h4 {
-        font-size: 18px;
-        font-weight: 700;
-    }
-    
-    .cardContent p {
-        font-size: 12px;
-        font-weight: 400;
-    }
-    .productTop h3 {
-        font-size: 16px;
-    }
-    .pieChart {
-        width: 114px;
-        height: 114px;
-    }
-    .productChart {
-        padding: 20px 20px 20px 20px;
-        gap: 20px;
-        width: 55%;
-        }
-        .alignProduct h6 {
-            font-size: 12px;
-        }
-        
-        .data-content p {
-            font-size: 10px;
-        }
-        
-        .scheduleContainer {
-            width: 45%;
-            padding: 20px 20px 20px 20px;
-            
-
-        }
-        .meeting h6 {
-            font-size: 12px;
-
-        }
-        
-        .meeting p {
-
-            font-size: 10px;
-        }
-
-}
-
-@media only screen and (max-width: 600px) {
-
-    .dashboardContainer {
-        padding-left: 0px;
-        padding-right: 0px;
-        padding: 20px;
-    }
-    
-    .dashHead h3 {
-    
-        font-size: 18px;
-    
-    }
-    .dashItems {
-        gap: 15px;
-    }
-    .searchBar input {
-        width: 130px;
-        height: 30px;
-        border-radius: 6px;
-        font-size: 12px;
-    }
-    
-    .logo h1 {
-        font-size: 28px;
-    }
-    .navContainer {
-        height: 60px;
-        padding: 10px 20px;
-    }
-    .navList1 li {
-        font-size: 14px;
-    }
-    
-    
-    .navList2 li {
-        font-size: 12px;
-    }
-
-    .chartContainer {
-        height: 250px;
-        padding: 0px 0px;
-        padding: 20px 20px 20px 10px;
-        border-radius: 15px;
-    }
-    
-    .chartContainer h3 {
-        font-size: 16px;
-    }
-    
-    
-    .actIndicators select {
-        font-size: 10px;
-    }
-    
-    .dot {
-        width: 8px;
-        height: 8px;
-    }
-    
-    .alignInd {
-        gap: 8px;
-    }
-    
-    .userIndicator {
-        gap: 20px;
-        font-size: 12px;
-    }
-    
-
-    .cardContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 20px;
-    }
-    
-    .card {
-        width: 100%;
-        border-radius: 10px;
-    }
-    .cardContent h4 {
-        font-size: 18px;
-        font-weight: 700;
-    }
-    
-    .cardContent p {
-        font-size: 12px;
-        font-weight: 400;
-    }
-
-    .subContainer {
-
-   height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 20px;
-    
-    }
+    z-index: 999;
+   
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-270px);
+   }
+   .sidebarActive{
   
-    .productChart {
-        width: 100%;
-        height: 220px;
-        background-color: #fff;
-        border-radius: 20px;
-        padding: 30px 30px 30px 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .scheduleContainer {
-        width: 100%;
-        height: 250px;
-        background-color: #fff;
-        border-radius: 20px;
-        padding: 30px 30px 30px 30px;
-    }
-    .pieChart {
-        width: 124px;
-        height: 124px;
-    }
-    .productTop select {
-    width: auto;
-    font-size: 10px;
-    }
-    
-
-    .productTop h3 {
-        font-size: 14px;
-    }
- 
-        .alignProduct h6 {
-            font-size: 12px;
-        }
-        
-        .data-content p {
-            font-size: 10px;
-        }
-        
-        .meeting h6 {
-            font-size: 14px;
-
-        }
-        
-        .meeting p {
-
-            font-size: 12px;
-        }
-
+    transform: translateX(0);
 }
+   .dashboardContainer{
+    width: 100%;
+   }
+   .togglemenu{
+    display: block;
+   }
+  }
+
+  @media only screen and (max-width: 620px) {
+ .userProfile p{
+    display: none;
+ }
+ .logoImg{
+  width: auto;
+  height: 30px;
+}
+   }
+

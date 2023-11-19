@@ -49,10 +49,6 @@ const Home = () => {
 
   return (
     <>
- <Header  />
-
-      <div className="homeContainer">
-        <NavBar />
         <div className="dashboardContainer">
           <div className="cardContainer">
             {cardData.map((card, index) => (
@@ -70,7 +66,6 @@ const Home = () => {
           </div>
           <ChartComponent />
         </div>
-      </div>
     </>
   );
 };

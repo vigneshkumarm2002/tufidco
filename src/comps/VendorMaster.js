@@ -1,13 +1,16 @@
 import React from "react";
-import Table from "./table";
+import Header from "./header";
+import NavBar from "./navContainer"
 
-const VendorMaster = () => {
+const VendorMaster = ({title}) => {
   return (
-    <Table
-      tableName="Vendor Master"
-      aboutTable="Add new Vendor, edit data, print data and remove from system"
-      addButton={true}
-    />
+    <>
+        <div className="bodyContainer">
+          <h1>working on it</h1>
+         {title && <p>{title}</p>}
+        </div>
+     
+    </>
   );
 };
 

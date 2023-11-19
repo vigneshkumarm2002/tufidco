@@ -4,9 +4,7 @@ import "./signin.css";
 import Home from "./Home";
 import googleIcon from './../assets/google-icon.svg';
 import appleIcon from './../assets/apple-icon.svg';
-import { auth, provider } from "./config";
-import { signInWithPopup } from 'firebase/auth';
-import VendorMaster from './VendorMaster';
+
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -20,7 +18,7 @@ const SignIn = () => {
     setValue(true);
 
     // Redirect to home page after successful login
-    navigate('/');
+    navigate('/dashboard');
   };
 
   return (

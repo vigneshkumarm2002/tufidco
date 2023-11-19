@@ -1,150 +1,86 @@
 import React from "react";
-import "./VendorMaster.css";
-import NavBar from "./navContainer.js";
+import "./table.css";
+import "./Home.css"
 
-import Home from "./../assets/dashboardIcon.svg";
-import Header from "./header.js";
-
-const VendorMaster = ({tableName,aboutTable , addButton}) => {
-  const data = [
-    {
-      vendordetails: [
-        {
-          vendorName: "Suyog",
-          vendorCode: "TN_VEN26",
-          pfmsStatus: "PENDING",
-        },
-      ],
-      companyName: "ALIGHT",
-      emailId: "SUYOG@COM",
-      phoneNo: "5354554656",
-      status: ["Active","Pending"],
-      actions: ["View", "Edit", "Delete"],
-    },
-    {
-      vendordetails: [
-        {
-          vendorName: "partth",
-          vendorCode: "TN_VEN6",
-          pfmsStatus: "ACCP",
-        },
-      ],
-      companyName: "alight",
-      emailId: "parth@gmail.com",
-      phoneNo: "9103298293",
-      status: ["Active","Approved"],
-      actions: ["View", "Edit", "Delete"],
-    },
-    {
-      vendordetails: [
-        {
-          vendorName: "parthhhh",
-          vendorCode: "TN_VEN7",
-          pfmsStatus: "ACCP",
-        },
-      ],
-      companyName: "alight",
-      emailId: "parth@gmail.com",
-      phoneNo: "9109283192",
-      status: ["Active","Approved"],
-      actions: ["View", "Edit", "Delete"],
-    },
-  ];
-
+const Table = ({ tableData }) => {
   // Extract header keys from the first item in the data array
-  const headerKeys = Object.keys(data[0]);
-
-  console.log(data);
+  const headerKeys = Object.keys(tableData[0]);
 
   return (
-    <>
-      <Header />
-      <div className="homeContainer">
-        <NavBar />
-        <div className="bodyContainer">
-          <div className="bodyHead">
-            <div className="headTop">
-              <h3>{tableName}</h3>
-
-              <div className="dashItems">
-                <img
-                  style={{ cursor: "pointer" }}
-                  src={Home}
-                  alt="searchIcon"
-                />
-                <p>/ Vendor Master</p>
-                <div className="searchBar"></div>
-              </div>
-            </div>
-            <div className="headBody">
-              <p>
-                {aboutTable}
-              </p>
-            </div>
-          </div>
-
-        {addButton && <div className="addButton">
-            <button>Add New Vendor</button>
-          </div>
-       }
-
-          <div className="tableContainer">
-            <div className="tableTop">
-              <div>
-                <p>Results</p>
-              </div>
-              <div className="searchContainer">
-                <p>Search</p>
-                <input className="searchBox"></input>
-              </div>
-            </div>
-            <table className="dataTable">
-              <thead>
-                <tr>
-                  {headerKeys.map((key, index) => (
-                    <th key={index}>{key}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-            {data.map((item, index) => (
-         <tr key={index}>
-         {headerKeys.map((key, keyIndex) => (
-           <td key={keyIndex}>
-             {Array.isArray(item[key]) && key !== 'actions' && key !== 'status'  ? (
-               item[key].map((subItem, subIndex) => (
-                 <div key={subIndex}>
-                   {Object.entries(subItem).map(([subKey, subValue], subKeyIndex) => (
-                     <div key={subKeyIndex}>
-                       <b>{subKey}</b>: {subValue}
-                     </div>
-                   ))}
-                 </div>
-               ))
-             ) : key === 'actions' || key === 'status'  ? (
-               item[key].map((action, actionIndex) => (
-                 <button
-                   key={actionIndex}
-                   className={`buttonStyle ${action.toLowerCase()}Btn`}
-                 >
-                   {action}
-                 </button>
-               ))
-             ) : (
-               item[key]
-             )}
-           </td>
-         ))}
-       </tr>
-       
-            ))}
-          </tbody>
-            </table>
-          </div>
+    <div className="tableContainer">
+      <div className="tableTop">
+        <div className="entries">
+          <p>Show</p>
+          <select id="entries" name="entries">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+          </select>
+          <p>entries</p>
+        </div>
+        <div className="searchBar">
+          <input className=""></input>
+          <button><span className="material-symbols-rounded">search</span></button>
         </div>
       </div>
-    </>
+      <div className="tableBox">
+        <table className="dataTable">
+          <thead>
+            <tr>
+              {headerKeys.map((key, index) => (
+                <th key={index}>{key}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.map((item, index) => (
+              <tr key={index}>
+                {headerKeys.map((key, keyIndex) => (
+                  <td key={keyIndex}>
+                    {Array.isArray(item[key]) &&
+                    key !== "actions" &&
+                    key !== "status"
+                      ? item[key].map((subItem, subIndex) => (
+                          <div key={subIndex}>
+                            {Object.entries(subItem).map(
+                              ([subKey, subValue], subKeyIndex) => (
+                                <div key={subKeyIndex}>
+                                  <b style={{fontWeight:"500"}}>{subKey}</b>:{subValue}
+                                </div>
+                              )
+                            )}
+                          </div>
+                        ))
+                      : key === "actions" || key === "status"
+                      ? item[key].map((action, actionIndex) => (
+                          <button
+                            key={actionIndex}
+                            className={`buttonStyle ${action.toLowerCase()}Btn`}
+                          >
+                            {action}
+                          </button>
+                        ))
+                      : item[key]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="paginationContainer">
+        <p>Showing {tableData.length} entries</p>
+        <div className="pagination">
+          <button>Previous</button>
+          <button style={{ backgroundColor: "#1B8381", color: "white" }}>
+            1
+          </button>
+          <button>Next</button>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default VendorMaster;
+export default Table;

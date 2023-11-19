@@ -1,0 +1,177 @@
+.card-Container{
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust min and max width as needed */
+    gap: 16px; /* Optional: You can adjust the gap between columns */
+    grid-auto-flow: dense; 
+}
+.cardData{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding:20px 15px;
+    border-radius: 10px;
+}
+/* SOR.css */
+
+.multipleCard {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    grid-auto-flow: dense;
+  }
+
+  .GanttCard {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    grid-auto-flow: dense;
+  }
+  
+  
+  .textCard {
+    background-color: white;
+    border-radius: 10px;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: rgba(149, 157, 165, 0.39) 0px 0px 10px;
+  }
+  
+  .flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .depType {
+    color: white;
+    font-size: smaller;
+    padding: 5px;
+    background-color: #4EC7EF;
+    border-radius: 5px;
+  }
+  
+  .depType2 {
+    color: white;
+    font-size: smaller;
+    padding: 5px;
+    background-color: #ea7fb8;
+    border-radius: 5px;
+  }
+  
+  .cardText {
+    text-align: start;
+    height: 100%;
+  }
+  
+  .cardTitle {
+    color: black;
+    font-weight: medium;
+  }
+  
+  .cardInfo {
+    color: grey;
+    text-align: start;
+    margin-top: 3px;
+    font-size: smaller;
+  }
+  
+  .materialSymbol {
+    color: white;
+  }
+  
+
+  .FormContainer{
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 30px;
+    width:100% ;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.39) 0px 0px 10px;
+   }
+   .textBoxContainer{
+    display: flex;
+    justify-content: space-between;
+   }
+   .textBoxContainer input{
+    height: 30px;
+   }
+   .formElements{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   }
+.someData{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 16px;
+  grid-auto-flow: dense;
+  
+}
+.flexError{
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.39) 0px 0px 10px;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  padding: 20px;
+  align-items: center;
+  
+}
+.imgErrorContainer{
+  width: auto;
+  height: 70%;
+}
+
+.imgErrorContainer img{
+  width: auto;
+  height: 100%;
+}
+
+   @media only screen and (max-width: 800px) {
+    .formElements{
+      width: 100%;
+     }
+     .imgErrorContainer{
+      width: 80%;
+      height: auto;
+    }
+    .imgErrorContainer img{
+      width: 100%;
+      height: auto;
+    }
+   }
+
+   @media only screen and (max-width: 520px) {
+   
+     .textBoxContainer{
+     flex-direction: column;
+     gap: 5px;
+     }
+     .textBoxContainer input{
+      width: 100%;
+     }
+     .someData{
+   
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+      gap: 16px;
+    
+      
+    }
+    .imgErrorContainer{
+      width: 90%;
+    }
+   
+   }
