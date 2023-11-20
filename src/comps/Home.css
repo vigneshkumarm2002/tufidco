@@ -587,10 +587,6 @@ margin-left: -10px;
     height:60px;
 }
 .dashboardContainer {
-
-      width: calc(100vw - 260px);
       height: calc(100vh - 60px);
-  
-  
   }
    }
