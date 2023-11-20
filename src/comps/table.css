@@ -235,6 +235,10 @@ padding: 5px;
       flex-direction: column;
       
     }
+    .bodyContainer{
+      height: calc(100vh - 60px);
+      
+  }
     
    }
 
