@@ -438,6 +438,19 @@ const data = {
     // Add more suppliers as needed
   ],
 
+  userData: [
+    {
+      Name: 'Abhishek Thakur',
+      LoginId: 'dpe.narsinghpur',
+      Role: 'Divisional Project Engineer (DPE)',
+      Mobile: '9827671646',
+      LastLogin: 'June 26, 2023, 12:32 p.m.',
+      status: ['Active'],
+      actions:["View","Edit","Delete"]
+    }
+  ]
+  
+
   
 }
 
